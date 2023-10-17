@@ -113,8 +113,10 @@ body {
   margin-left: auto;
   height: 100%;
   min-height: 100vh;
+  padding: 8px 0 24px;
   @media (min-width: 400px) {
     max-width: 480px;
+    padding: 8px 0 32px;
   }
   &__loader {
     color: #ffffff;
