@@ -8,16 +8,13 @@ import Calendar from './components/Calendar.vue'
 import ScheduleList from './components/ScheduleList.vue'
 import Loader from './components/icons/Loader.vue'
 
-// Configs
 const scheduledStore = useScheduledStore()
 const { selectedClub, selectedCategory, weekdays } = defaultConfigs
 
-// Local state
 const today = ref(new Date())
 const isLoading = ref(false)
 const selectedDate = ref(null)
 
-// Computed
 const days = computed(() => {
   const arr = []
   for (let i = 0; i < weekdays; i++) {
@@ -28,7 +25,6 @@ const days = computed(() => {
 const lastDay = computed(() => getNthDate(days.value.length))
 const scheduleList = computed(() => scheduledStore.scheduleLists[selectedDate.value] ?? '')
 
-// Methods
 onMounted(() => {
   initComponent()
 })
